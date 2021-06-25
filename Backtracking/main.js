@@ -17,7 +17,7 @@ for (let i = 0; i < todas_las_rutas.length; i++) {
             ruta_modificada = ruta.replace(/,/g, ' - ')
             size = ruta_modificada.length
             lista_values_sql.push(
-                `(${contador}, 'ruta ${contador_interno_rutas} ${ruta_modificada.substring(0, 1)}-${ruta_modificada.substring(size-1, size)}', '${ruta_modificada}', '${ruta_modificada.substring(0, 1)}', '${ruta_modificada.substring(size-1, size)}');`
+                `(${contador}, 'ruta ${contador_interno_rutas} ${ruta_modificada.substring(0, 1)}-${ruta_modificada.substring(size-1, size)}', '${ruta_modificada}', ${ruta_modificada.substring(0, 1)}, ${ruta_modificada.substring(size-1, size)});`
             )
             contador_interno_rutas += 1
             contador += 1
@@ -40,5 +40,5 @@ let estaciones = mostrar_estaciones()
 let insert_sql_tabla_estacion = `insert into estacion(id) values`
 for (const e of estaciones) {
     let insert = `${insert_sql_tabla_estacion} (${e});`
-    // console.log(insert)
+    console.log(insert)
 }

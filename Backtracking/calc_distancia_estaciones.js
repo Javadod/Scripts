@@ -58,7 +58,7 @@ function calcular_menor_distancia (origen, destino) {
     return [minimo.toString(), ruta_minima]
 }
 
-console.log(calcular_menor_distancia(1, 11))
+// console.log(calcular_menor_distancia(1, 11))
 
 // module.exports = {
 //     calcular_menor_distancia

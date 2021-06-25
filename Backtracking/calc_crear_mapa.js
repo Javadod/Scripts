@@ -117,7 +117,7 @@ function mostrar_estaciones () {
     return lista
 }
 
-console.log(hacer_recorrido(1, 11))
+// console.log(hacer_recorrido(1, 11))
 // console.log(todo_recorrido_separados())
 
 module.exports = {

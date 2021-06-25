@@ -1,23 +1,6 @@
 const {hacer_recorrido} = require('./calc_crear_mapa')
+const {distancia} = require('./ruta_y_camino')
 
-// 15 caminos
-let distancia = [
-    ['a', 'b', 5],
-    ['a', 'e', 4],
-    ['b', 'k', 5],
-    ['b', 'c', 6],
-    ['b', 'e', 3],
-    ['e', 'h', 6],
-    ['h', 'i', 5],
-    ['k', 'i', 4],
-    ['k', 'd', 2],
-    ['i', 'g', 3],
-    ['f', 'g', 4],
-    ['d', 'f', 3],
-    ['f', 'j', 9],
-    ['d', 'j', 5],
-    ['c', 'd', 1]
-]
 /**
     * Función que permite calcular la distancia de una ruta.
     * @param {string} ruta Será una ruta válida que este delimitada por comas.
@@ -47,8 +30,8 @@ function calcular_distancia (ruta) {
 */
 function buscar_ruta (origen, destino) {
     for (estacion of distancia)
-        if (estacion[0] === origen || estacion[0] === destino)
-            if (estacion[1] === origen || estacion[1] === destino)
+        if (estacion[0] == origen || estacion[0] == destino)
+            if (estacion[1] == origen || estacion[1] == destino)
                 return estacion[2]
     return -1
 }
@@ -66,16 +49,16 @@ function calcular_menor_distancia (origen, destino) {
         lista = hacer_recorrido(origen, destino)
     for (ruta of lista) {
         aux = calcular_distancia(ruta)
+        console.log(aux)
         if (aux < minimo || minimo === -1) {
             minimo = aux
             ruta_minima = ruta
         }
-
     }
     return [minimo.toString(), ruta_minima]
 }
 
-console.log(calcular_menor_distancia('a', 'k'))
+console.log(calcular_menor_distancia(1, 11))
 
 // module.exports = {
 //     calcular_menor_distancia

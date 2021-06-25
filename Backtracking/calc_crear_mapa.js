@@ -1,18 +1,4 @@
-//Todas las conexiones
-let mapa = [
-    ['a', ['b', 'e']],
-    ['b', ['c', 'e', 'a', 'k']],
-    ['c', ['b', 'd']],
-    ['d', ['c', 'f', 'j', 'k']],
-    ['e', ['b', 'h', 'a']],
-    ['f', ['d', 'g', 'j']],
-    ['g', ['f', 'i']],
-    ['h', ['e', 'i']],
-    ['i', ['h', 'g', 'k']],
-    ['j', ['d', 'f']],
-    ['k', ['b', 'd', 'i']]
-]
-
+const {mapa} = require('./ruta_y_camino')
 /**
     * DEPENDIENTE de la función recorrido.
     * Función que contiene 2 condiciones:
@@ -86,7 +72,7 @@ function recorrido (origen, destino, mapa, ruta, todo_ruta) {
     * @return {String[]} Retorna la lista actual de todos los recorridos encontrados que se esté buscando, en el caso origen a destino.
 */
 function hacer_recorrido (origen, destino) {
-    return recorrido(origen.toString(), destino.toString(), mapa, [], [])
+    return recorrido(origen, destino, mapa, [], [])
 }
 /**
     * Función todos los recorridos de todas las estaciones.
@@ -131,7 +117,8 @@ function mostrar_estaciones () {
     return lista
 }
 
-console.log(todo_recorrido_separados())
+console.log(hacer_recorrido(1, 11))
+// console.log(todo_recorrido_separados())
 
 module.exports = {
     hacer_recorrido, 

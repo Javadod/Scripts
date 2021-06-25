@@ -1,7 +1,6 @@
 const {hacer_recorrido, todo_recorrido_separados, mostrar_estaciones} = require('./calc_crear_mapa')
 
 
-
 let todas_las_rutas = todo_recorrido_separados()
 let contador = 1
 let contador_interno_rutas = 1

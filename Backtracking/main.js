@@ -57,4 +57,5 @@ function crear_datos_tabla_ruta_estacion (id, ruta) {
     return datos_tabla
 }
 
-console.log(tabla_ruta_estaciones_datos)
+//Guarda las rutas con respecto a la estación en la tabla de ruta_estacion
+// console.log(tabla_ruta_estaciones_datos)
